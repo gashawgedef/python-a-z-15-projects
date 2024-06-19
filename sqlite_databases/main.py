@@ -22,7 +22,8 @@ def select_all():
 def delete_all():
     cObj.execute("delete from employees")
     conn.commit()
-insert_values(3,"Gashaw",15400, "Software Engineering","Software Engineer")
+# insert_values(3,"Gashaw",15400, "Software Engineering","Software Engineer")
+# delete_all()
 cObj.close()
 conn.close()
 
