@@ -1,17 +1,21 @@
 from cgitb import text
+import datetime
 import requests
 from bs4 import BeautifulSoup
 from sqlalchemy import true
 import time
 import csv
+import send_mail
+from datetime import date
 # url = "https://www.abaybanksc.com/saving-and-investments/"
 urls=["https://finance.yahoo.com/quote/GOOG/","https://finance.yahoo.com/quote/AMZN/","https://finance.yahoo.com/quote/MSFT/"]
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
                   '(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
 }
+today = str(datetime.date.today()) + '.csv'
 """Write into csv files"""
-csv_file = open("scrape.csv","w")
+csv_file = open(today,"w")
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(['Stock Nme','Current Price','Previous Close','Open','Bid','Ask','Day Range','52 week Range','Volume','Avg. Value'])
 for url in urls:
@@ -37,3 +41,5 @@ for url in urls:
 
         else:
             print(f"Failed to retrieve the webpage. Status code: {response.status_code}")
+csv_file.close()
+send_mail.send(filename=today)
