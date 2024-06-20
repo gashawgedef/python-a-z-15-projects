@@ -23,5 +23,10 @@ if response.status_code == 200:
     current_price = soup.find_all("div",class_="container svelte-mgkamr")[0].find('span').get_text()
     print(current_price)
     # print(soup.find('div'))
+    table_info = soup.find_all("div",class_="container svelte-tx3nkj")[0].find_all("li")
+    for i in range(8):
+            heading=table_info[i].find_all("span")[0].get_text()
+            value =table_info[i].find_all("span")[1].get_text()
+            print(heading+ " - "+ value)
 else:
     print(f"Failed to retrieve the webpage. Status code: {response.status_code}")
