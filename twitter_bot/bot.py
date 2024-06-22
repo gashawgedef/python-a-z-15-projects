@@ -11,10 +11,10 @@ logger = logging.getLogger()
 
 
 # Your credentials
-consumer_key = "6FV0Ubt0UQNvijHI5GbvRK23c"
-consumer_secret = "1P95lIFNSt0UWNen2cgUCGZ3qdgRP2UExvPb3t08FlhxJdkqXD"
-access_token = "1306149538084917253-ZnZWjLrVj5Et58RIsAPfuARajKRH1A"
-access_token_secret = "nPMk1suYyJIE0OjmyQZYXinPQrSgaIbR7HeiYflXuDpVZ"
+consumer_key = ""
+consumer_secret = ""
+access_token = ""
+access_token_secret = ""
 auth = tweepy.OAuth1UserHandler(consumer_key, consumer_secret, access_token, access_token_secret)
 api = tweepy.API(auth)
 
