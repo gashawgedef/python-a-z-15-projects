@@ -33,7 +33,7 @@ def post_tweet():
     except tweepy.TweepyException as e:
         logger.error(f"Error while posting tweet: {e}")
     except requests.exceptions.RequestException as e:
-        logger.error(f"Connection error: {e}")
+        logger.error(f"Connection error has been occured: {e}")
 
 # Call the function to post a tweet
 post_tweet()
