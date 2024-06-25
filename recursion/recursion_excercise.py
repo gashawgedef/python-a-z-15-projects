@@ -17,7 +17,7 @@
 def run(n):
     if n == 0:
         return
-    print(n)
+    print("UL")
     run(n-1)
     print("Ul")
 
